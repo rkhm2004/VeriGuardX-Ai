@@ -1,0 +1,41 @@
+{
+  "name": "Forward Scan to Backend",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "scan-webhook",
+        "httpMethod": "POST"
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "options": {},
+        "url": "={{ $json[\"body\"] ? (process.env.BACKEND_URL || 'http://localhost:8000') + '/api/scan' : (process.env.BACKEND_URL || 'http://localhost:8000') + '/api/scan' }}",
+        "method": "POST",
+        "jsonParameters": true,
+        "bodyParametersJson": "={{ $json[\"body\"] }}"
+      },
+      "name": "Forward to Backend",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [600, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Forward to Backend",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
