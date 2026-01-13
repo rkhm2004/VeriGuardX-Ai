@@ -1,4 +1,4 @@
-<img width="2861" height="158" alt="image" src="https://github.com/user-attachments/assets/4d44dd75-107a-4591-90ba-ae210ee09a3a" /># VeriGuardX-AI
+# VeriGuardX-AI
 
 ## Problem Statement
 
