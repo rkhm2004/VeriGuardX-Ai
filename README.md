@@ -50,7 +50,6 @@ The system operates through a series of specialized agents, each handling distin
 | Component | Technology | Purpose |
 | :--- | :--- | :--- |
 | **Frontend** | **Next.js (React) + Tailwind + Shadcn/UI** | User interface for scanning, dashboarding, and manual audits |
-| **Orchestrator** | **n8n** (Self-hosted or Cloud) | Central nervous system routing data to agents |
 | **Reasoning Engine** | **Ollama** (Llama 3.2 / Mistral) | Local AI brain for Council Agent and visual analysis |
 | **Specialist Tools** | **Python (FastAPI)** | Heavy computation, crypto signatures, statistical detection |
 | **Visual AI** | **Llama 3.2 Vision** (via Ollama) | Image analysis for visual discrepancies |
