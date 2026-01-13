@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 4 7% 3%; /* #05070a Deepest dark charcoal/black */
+    --foreground: 0 0% 100%;
+    --card: 204 7% 5%; /* #0a0c10 Dark metallic */
+    --card-foreground: 0 0% 100%;
+    --popover: 204 7% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 190 100% 50%; /* #00f0ff Electric Cyan/Teal */
+    --primary-foreground: 4 7% 3%;
+    --secondary: 215 16% 47%; /* #64748b Subtle cool gray */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 204 7% 5%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 190 100% 50%;
+    --accent-foreground: 4 7% 3%;
+    --destructive: 345 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 190 100% 50%;
+    --input: 210 11% 8%; /* #0f1115 Dark input background */
+    --ring: 190 100% 50%;
+    --radius: 0.25rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background: radial-gradient(ellipse at top, #1a1a1a 0%, #0a0a0a 50%, #000000 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    font-family: 'Inter', 'JetBrains Mono', sans-serif;
+    /* Holographic mesh pattern */
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(0, 243, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(191, 0, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(255, 0, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 0, 60, 0.03) 0%, transparent 50%),
+      linear-gradient(rgba(0, 243, 255, 0.01) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.01) 1px, transparent 1px);
+    background-size: 200px 200px, 180px 180px, 220px 220px, 160px 160px, 30px 30px, 30px 30px;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-weight: 700;
+  }
+
+  .font-header {
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', 'JetBrains Mono', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Glowing Containment Unit */
+  .containment-unit {
+    @apply bg-gray-800/80 border border-primary/50 shadow-cyber-glow rounded-xl;
+  }
+
+  .containment-unit:hover {
+    @apply shadow-cyber-glow-active border-primary;
+  }
+
+  /* Cyberpunk Input */
+  .cyber-input {
+    @apply bg-input border border-primary/50 text-primary placeholder-secondary focus:border-primary focus:shadow-cyber-glow;
+  }
+
+  /* Cyberpunk Button */
+  .cyber-button {
+    @apply bg-card border border-primary text-primary font-header font-bold tracking-wider shadow-cyber-glow hover:shadow-cyber-glow-active hover:bg-primary/10 transition-all duration-300;
+  }
+
+  .cyber-button-primary {
+    @apply cyber-button bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+}
+
+@layer utilities {
+  /* Enhanced Cyber Text Utilities */
+  .cyber-text-primary {
+    color: #00f3ff;
+    text-shadow:
+      0 0 5px rgba(0, 243, 255, 0.5),
+      0 0 10px rgba(0, 243, 255, 0.3),
+      0 0 15px rgba(0, 243, 255, 0.1);
+  }
+
+  .cyber-text-secondary { color: #64748b; }
+  .cyber-text-accent {
+    color: #00f3ff;
+    text-shadow:
+      0 0 10px rgba(0, 243, 255, 0.8),
+      0 0 20px rgba(0, 243, 255, 0.6),
+      0 0 30px rgba(0, 243, 255, 0.4);
+  }
+
+  .cyber-text-holographic {
+    background: linear-gradient(45deg, #00f3ff, #bf00ff, #ffea00, #ff003c);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: holographic-shift 3s ease-in-out infinite;
+    text-shadow: none;
+  }
+
+  /* Advanced Matrix Background */
+  .matrix-bg {
+    background-image:
+      linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 25% 25%, rgba(0, 243, 255, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(191, 0, 255, 0.02) 0%, transparent 50%);
+    background-size: 40px 40px, 40px 40px, 200px 200px, 180px 180px;
+    animation: matrix-flow 20s linear infinite;
+  }
+
+  .matrix-bg-intense {
+    background-image:
+      linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+      radial-gradient(circle at 20% 20%, rgba(0, 243, 255, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 20%, rgba(191, 0, 255, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 40% 80%, rgba(255, 234, 0, 0.03) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(255, 0, 60, 0.03) 0%, transparent 40%);
+    background-size: 30px 30px, 30px 30px, 150px 150px, 120px 120px, 180px 180px, 140px 140px;
+    animation: matrix-flow-fast 10s linear infinite;
+  }
+
+  /* Holographic Card Effects */
+  .holographic-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(10, 10, 10, 0.95));
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .holographic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+    animation: shimmer-slide 3s infinite;
+  }
+
+  .holographic-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.05), rgba(191, 0, 255, 0.05), rgba(255, 234, 0, 0.05), rgba(255, 0, 60, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .holographic-card:hover::after {
+    opacity: 1;
+  }
+
+  /* Enhanced Glow Effects */
+  .cyber-glow-pulse {
+    animation: cyber-glow-pulse 2s ease-in-out infinite alternate;
+  }
+
+  .cyber-glow-rainbow {
+    background: linear-gradient(45deg, #00f3ff, #bf00ff, #ffea00, #ff003c);
+    background-size: 400% 400%;
+    animation: rainbow-glow 3s ease-in-out infinite;
+  }
+
+  /* Particle Effects */
+  .floating-particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(0, 243, 255, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(191, 0, 255, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(255, 234, 0, 0.2) 0%, transparent 50%);
+    background-size: 100px 100px, 120px 120px, 80px 80px;
+    animation: particle-float 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Scanning Line Effects */
+  .scan-line-vertical {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scan-line-vertical::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.8), transparent);
+    animation: scan-vertical 4s linear infinite;
+  }
+
+  /* Terminal-like Text Effects */
+  .terminal-text {
+    font-family: 'JetBrains Mono', monospace;
+    color: #00f3ff;
+    text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+    animation: text-flicker 4s linear infinite;
+  }
+
+  /* Keyframe Animations */
+  @keyframes holographic-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes matrix-flow {
+    0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+    100% { background-position: 40px 40px, 40px 40px, 200px 200px, 180px 180px; }
+  }
+
+  @keyframes matrix-flow-fast {
+    0% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+    100% { background-position: 30px 30px, 30px 30px, 150px 150px, 120px 120px, 180px 180px, 140px 140px; }
+  }
+
+  @keyframes shimmer-slide {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  @keyframes cyber-glow-pulse {
+    from {
+      box-shadow:
+        0 0 20px rgba(0, 243, 255, 0.3),
+        0 0 40px rgba(0, 243, 255, 0.2),
+        0 0 60px rgba(0, 243, 255, 0.1);
+    }
+    to {
+      box-shadow:
+        0 0 30px rgba(0, 243, 255, 0.5),
+        0 0 60px rgba(0, 243, 255, 0.3),
+        0 0 90px rgba(0, 243, 255, 0.2);
+    }
+  }
+
+  @keyframes rainbow-glow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes particle-float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    25% {
+      transform: translateY(-20px) rotate(90deg);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-10px) rotate(180deg);
+      opacity: 0.4;
+    }
+    75% {
+      transform: translateY(-30px) rotate(270deg);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes scan-vertical {
+    0% { top: -100%; }
+    100% { top: 100%; }
+  }
+
+  @keyframes text-flicker {
+    0%, 100% { opacity: 1; }
+    2% { opacity: 0.8; }
+    4% { opacity: 1; }
+    8% { opacity: 0.9; }
+    10% { opacity: 1; }
+    15% { opacity: 0.85; }
+    20% { opacity: 1; }
+  }
+
+  /* Interactive Elements */
+  .cyber-button-enhanced {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(191, 0, 255, 0.1));
+    border: 1px solid rgba(0, 243, 255, 0.5);
+    color: #00f3ff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .cyber-button-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .cyber-button-enhanced:hover::before {
+    left: 100%;
+  }
+
+  .cyber-button-enhanced:hover {
+    box-shadow:
+      0 0 20px rgba(0, 243, 255, 0.4),
+      0 0 40px rgba(0, 243, 255, 0.2),
+      inset 0 0 20px rgba(0, 243, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Data Stream Effect */
+  .data-stream {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .data-stream::after {
+    content: '0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(0, 243, 255, 0.1);
+    white-space: nowrap;
+    animation: data-stream-flow 8s linear infinite;
+  }
+
+  @keyframes data-stream-flow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  @keyframes drawLoop {
+    0% {
+      stroke-dashoffset: 1200;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Glitch Effect */
+  .glitch-text {
+    position: relative;
+    display: inline-block;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch-text::before {
+    animation: glitch-1 0.5s infinite;
+    color: #ff003c;
+    z-index: -1;
+  }
+
+  .glitch-text::after {
+    animation: glitch-2 0.5s infinite;
+    color: #bf00ff;
+    z-index: -2;
+  }
+
+  @keyframes glitch-1 {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+
+  @keyframes glitch-2 {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(2px, -2px); }
+    40% { transform: translate(2px, 2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(-2px, 2px); }
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- ADD THIS BLOCK TO FIX THE WHITE SCROLL AREA --- */
+@layer base {
+  html, body {
+    background-color: #000000; /* Forces black background everywhere */
+    color: #e5e7eb;            /* Sets default text color to gray-200 */
+    min-height: 100vh;         /* Ensures it covers the full screen */
+  }
+}

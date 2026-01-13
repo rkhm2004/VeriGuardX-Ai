@@ -1,0 +1,51 @@
+# FastAPI and Core
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic>=2.10.0
+pydantic-settings>=2.7.0
+# Database
+sqlalchemy>=2.0.30
+# psycopg2-binary==2.9.9
+# Commented out because building psycopg2 from source requires PostgreSQL dev
+# tools (pg_config) which are not available in many Windows dev environments.
+# If you need PostgreSQL support, install the OS PostgreSQL dev package or
+# restore this line and ensure `pg_config` is on PATH.
+alembic==1.12.1
+
+# Cryptography
+cryptography==41.0.7
+pycryptodome==3.19.0
+
+# AI/ML
+# scikit-learn==1.3.2
+# numpy==1.26.2
+# pandas==2.1.3
+# The above ML libraries are compiled packages that often require
+# a C/C++ build toolchain on Windows. Commented out to allow
+# `pip install -r requirements.txt` to complete in lightweight
+# dev environments. Re-enable if you have wheels or a suitable
+# build toolchain (or use conda for prebuilt binaries).
+
+# HTTP Client
+httpx==0.25.2
+requests==2.31.0
+
+# Utilities
+python-dotenv==1.0.0
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+
+# QR Code Processing
+# pyzbar==0.1.9
+# pillow==10.1.0
+# opencv-python==4.8.1.78
+# The above imaging and native packages often require a C build
+# toolchain on Windows. Commented out to allow installation of
+# pure-Python dependencies in lightweight dev environments. Re-enable
+# when you have appropriate build tools or prefer using conda.
+
+# Date/Time
+python-dateutil==2.8.2
+
+# OpenAI API
+openai>=1.0.0
