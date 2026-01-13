@@ -1,4 +1,4 @@
-# AI Trust & Safety Command Center
+# VeriGuardX-AI
 
 ## Problem Statement
 
@@ -55,6 +55,123 @@ The system operates through a series of specialized agents, each handling distin
 | **Specialist Tools** | **Python (FastAPI)** | Heavy computation, crypto signatures, statistical detection |
 | **Visual AI** | **Llama 3.2 Vision** (via Ollama) | Image analysis for visual discrepancies |
 | **Database** | **PostgreSQL / SQLite** | Memory storage for Rolling State, Visual Ground Truth, and Audit Logs |
+
+## Project Structure
+
+```
+VeriGuardX-AI/
+├── .env.example
+├── .gitignore
+├── README.md
+├── backend/
+│   ├── counterfeit_detection.db
+│   ├── database.db
+│   ├── init_db.py
+│   ├── requirements.txt
+│   ├── test_fullstack.py
+│   ├── test_grok.py
+│   ├── test_integration.py
+│   ├── test_pipeline.py
+│   ├── test_resilience.py
+│   └── app/
+│       ├── council.py
+│       ├── main.py
+│       ├── models.py
+│       ├── agents/
+│       │   ├── anomaly_agent.py
+│       │   ├── courier_agent.py
+│       │   ├── identity_agent.py
+│       │   ├── logic.py
+│       │   ├── marketplace_agent.py
+│       │   ├── provenance_agent.py
+│       │   ├── risk_agent.py
+│       │   ├── scan_agent.py
+│       │   └── security.py
+│       ├── data/
+│       │   └── supply_chain.db
+│       ├── database/
+│       │   ├── schema.sql
+│       │   └── seed_data.py
+│       └── tools/
+│           ├── db.py
+│           ├── ledger.py
+│           ├── security.py
+│           └── vision.py
+└── frontend/
+    ├── components.json
+    ├── next-env.d.ts
+    ├── next.config.mjs
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.js
+    ├── tailwind.config.js
+    ├── tsconfig.json
+    ├── tsconfig.tsbuildinfo
+    ├── app/
+    │   ├── globals.css
+    │   ├── layout.tsx
+    │   ├── page.tsx
+    │   ├── agents/
+    │   │   ├── anomaly/
+    │   │   │   └── page.tsx
+    │   │   ├── council/
+    │   │   │   └── page.tsx
+    │   │   ├── courier/
+    │   │   │   └── page.tsx
+    │   │   ├── identity/
+    │   │   │   └── page.tsx
+    │   │   ├── provenance/
+    │   │   │   └── page.tsx
+    │   │   ├── risk/
+    │   │   │   └── page.tsx
+    │   │   └── scan/
+    │   │       └── page.tsx
+    │   ├── anomaly/
+    │   │   └── page.tsx
+    │   ├── chat/
+    │   │   └── page.tsx
+    │   ├── council/
+    │   │   └── page.tsx
+    │   ├── courier/
+    │   │   └── page.tsx
+    │   ├── dashboard/
+    │   │   └── page.tsx
+    │   ├── home/
+    │   │   └── page.tsx
+    │   ├── identity/
+    │   │   └── page.tsx
+    │   ├── provenance/
+    │   │   └── page.tsx
+    │   ├── risk/
+    │   │   └── page.tsx
+    │   ├── scan/
+    │   │   └── page.tsx
+    │   └── visual/
+    │       └── page.tsx
+    ├── components/
+    │   ├── agent-card.tsx
+    │   ├── composite-security-badge.tsx
+    │   ├── council-chat.tsx
+    │   ├── courier-badge.tsx
+    │   ├── map-visualizer.tsx
+    │   ├── ProductIdentityCard.tsx
+    │   ├── scan-input-card.tsx
+    │   ├── verification-roadmap.tsx
+    │   └── ui/
+    │       ├── badge.tsx
+    │       ├── button.tsx
+    │       ├── card.tsx
+    │       ├── input.tsx
+    │       ├── label.tsx
+    │       ├── progress.tsx
+    │       └── tabs.tsx
+    └── lib/
+        ├── api.ts
+        ├── types.ts
+        ├── utils.ts
+        └── contexts/
+            └── VerificationContext.tsx
+```
 
 ## Setup and Execution Steps
 
