@@ -192,7 +192,7 @@ VeriGuardX-AI/
 3. Set up environment variables (copy and modify `.env.example` to `.env` if needed)
 4. Run the backend server:
    ```
-   python app/main.py
+   python app/main.py or uvicorn app.main:app --reload
    ```
    The server will start on port 5000.
 
