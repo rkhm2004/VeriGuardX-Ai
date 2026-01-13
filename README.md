@@ -1,4 +1,4 @@
-# VeriGuardX-AI
+<img width="2861" height="158" alt="image" src="https://github.com/user-attachments/assets/4d44dd75-107a-4591-90ba-ae210ee09a3a" /># VeriGuardX-AI
 
 ## Problem Statement
 
@@ -232,7 +232,8 @@ VeriGuardX-AI/
 
 ## Prototype Link
 
-[VeriGuardX-AI Repository](https://github.com/rkhm2004/VeriGuardX-Ai.git)
+[VeriGuardX-AI Repository](https://github.com/rkhm2004/VeriGuardX-Ai.git) || 
+[Demo Video Link](https://drive.google.com/file/d/1bg8T9YsxWqq0hXoB5PJ3tfU-x15p1mxe/view?usp=sharing)
 
 ---
 
